@@ -36,6 +36,7 @@ public final class MaterialIds {
   public static final MaterialId roseGold = id("rose_gold");
   // tier 3 (nether)
   public static final MaterialId cobalt = id("cobalt");
+  public static final MaterialId ardite = id("ardite");
   // tier 3 - bindings
   public static final MaterialId darkthread = id("darkthread");
   // tier 4

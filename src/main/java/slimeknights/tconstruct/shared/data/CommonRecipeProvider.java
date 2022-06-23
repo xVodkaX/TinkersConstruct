@@ -189,6 +189,8 @@ public class CommonRecipeProvider extends BaseRecipeProvider implements ICommonR
     // ores
     metalCrafting(consumer, TinkerMaterials.copper, folder);
     metalCrafting(consumer, TinkerMaterials.cobalt, folder);
+    metalCrafting(consumer, TinkerMaterials.ardite, folder);
+    metalCrafting(consumer, TinkerMaterials.alumite, folder);
     // tier 3
     metalCrafting(consumer, TinkerMaterials.slimesteel, folder);
     metalCrafting(consumer, TinkerMaterials.tinkersBronze, folder);
@@ -208,6 +210,14 @@ public class CommonRecipeProvider extends BaseRecipeProvider implements ICommonR
     CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(TinkerWorld.cobaltOre), cobaltIngot, 1.5f, 200)
                         .addCriterion("has_item", hasItem(TinkerWorld.cobaltOre))
                         .build(consumer, wrap(cobaltIngot, folder, "_smelting"));
+    Item arditeIngot = TinkerMaterials.ardite.getIngot();
+    CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(TinkerWorld.arditeOre), arditeIngot, 1.5f, 200)
+                        .addCriterion("has_item", hasItem(TinkerWorld.arditeOre))
+                        .build(consumer, wrap(arditeIngot, folder, "_smelting"));
+    //Item alumiteIngot = TinkerMaterials.ardite.getIngot();
+    //CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(TinkerWorld.alumiteOre), alumiteIngot, 1.5f, 200)
+    //                    .addCriterion("has_item", hasItem(TinkerWorld.alumiteOre))
+    //                    .build(consumer, wrap(alumiteIngot, folder, "_smelting"));
     Item copperIngot = TinkerMaterials.copper.getIngot();
     CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(TinkerWorld.copperOre), copperIngot, 1.5f, 200)
                         .addCriterion("has_item", hasItem(TinkerWorld.copperOre))

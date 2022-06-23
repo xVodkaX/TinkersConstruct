@@ -83,6 +83,7 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
     // tier 2 (nether)
     // tier 3 (nether)
     metalMaterialRecipe(consumer, MaterialIds.cobalt, folder, "cobalt", false);
+    metalMaterialRecipe(consumer, MaterialIds.ardite, folder, "ardite", false);
     // tier 4
     metalMaterialRecipe(consumer, MaterialIds.queensSlime, folder, "queens_slime", false);
     metalMaterialRecipe(consumer, MaterialIds.manyullyn, folder, "manyullyn", false);
@@ -147,6 +148,7 @@ public class MaterialRecipeProvider extends BaseRecipeProvider implements IMater
     materialMeltingCasting(consumer, MaterialIds.roseGold,      TinkerFluids.moltenRoseGold,      true,  folder);
     materialMeltingCasting(consumer, MaterialIds.pigIron,       TinkerFluids.moltenPigIron,       false, folder);
     materialMeltingCasting(consumer, MaterialIds.cobalt,        TinkerFluids.moltenCobalt,        true,  folder);
+    materialMeltingCasting(consumer, MaterialIds.ardite,        TinkerFluids.moltenArdite,        true,  folder);
     materialMeltingComposite(consumer, MaterialIds.wood,   MaterialIds.nahuatl,    TinkerFluids.moltenObsidian, FluidValues.GLASS_BLOCK, false, folder);
     materialMeltingComposite(consumer, MaterialIds.string, MaterialIds.darkthread, TinkerFluids.moltenObsidian, FluidValues.GLASS_PANE,  false, folder);
     // tier 4

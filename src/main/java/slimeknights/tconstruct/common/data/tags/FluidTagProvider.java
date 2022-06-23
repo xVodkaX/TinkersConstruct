@@ -43,6 +43,8 @@ public class FluidTagProvider extends FluidTagsProvider {
     tagAll(TinkerFluids.moltenGold);
     tagAll(TinkerFluids.moltenCopper);
     tagAll(TinkerFluids.moltenCobalt);
+    tagAll(TinkerFluids.moltenArdite);
+    tagAll(TinkerFluids.moltenAlumite);
     tagLocal(TinkerFluids.moltenDebris);
     // alloys
     tagLocal(TinkerFluids.moltenSlimesteel);
@@ -106,6 +108,8 @@ public class FluidTagProvider extends FluidTagsProvider {
         .addTag(TinkerFluids.moltenGold.getForgeTag())
         .addTag(TinkerFluids.moltenCopper.getForgeTag())
         .addTag(TinkerFluids.moltenCobalt.getForgeTag())
+        .addTag(TinkerFluids.moltenArdite.getForgeTag())
+        .addTag(TinkerFluids.moltenAlumite.getForgeTag())
         .addTag(TinkerFluids.moltenDebris.getLocalTag())
         // base alloys
         .addTag(TinkerFluids.moltenSlimesteel.getLocalTag())
@@ -169,6 +173,8 @@ public class FluidTagProvider extends FluidTagsProvider {
         .addTag(TinkerFluids.moltenQuartz.getLocalTag())
         .addTag(TinkerFluids.moltenEmerald.getLocalTag())
         .addTag(TinkerFluids.moltenCobalt.getForgeTag())
+        .addTag(TinkerFluids.moltenArdite.getForgeTag())
+        .addTag(TinkerFluids.moltenAlumite.getForgeTag())
         .addTag(TinkerFluids.moltenTinkersBronze.getLocalTag())
         .addTag(TinkerFluids.moltenRoseGold.getForgeTag())
         .addTag(TinkerFluids.moltenSlimesteel.getLocalTag())

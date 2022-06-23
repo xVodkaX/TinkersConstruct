@@ -224,6 +224,8 @@ public class TConstruct {
         case "creative_upgrade": case "creative_ability": return TinkerModifiers.creativeSlotItem.get();
         // frame migration
         case "cobalt_item_frame": return TinkerGadgets.itemFrame.get(FrameType.DIAMOND);
+        case "ardite_item_frame": return TinkerGadgets.itemFrame.get(FrameType.DIAMOND);
+        case "alumite_item_frame": return TinkerGadgets.itemFrame.get(FrameType.DIAMOND);
         case "jewel_item_frame": return TinkerGadgets.itemFrame.get(FrameType.GOLD);
         // slime boots to modifier
         case "earth_slime_boots": return TinkerWorld.slime.get(SlimeType.EARTH).asItem();

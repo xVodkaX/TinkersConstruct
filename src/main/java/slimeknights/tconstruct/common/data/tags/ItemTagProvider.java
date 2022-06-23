@@ -93,6 +93,8 @@ public class ItemTagProvider extends ItemTagsProvider {
     // ores
     addMetalTags(TinkerMaterials.copper);
     addMetalTags(TinkerMaterials.cobalt);
+    addMetalTags(TinkerMaterials.ardite);
+    addMetalTags(TinkerMaterials.alumite);
     // tier 3
     addMetalTags(TinkerMaterials.slimesteel);
     addMetalTags(TinkerMaterials.tinkersBronze);
@@ -139,7 +141,8 @@ public class ItemTagProvider extends ItemTagsProvider {
 
     // beacons are happy to accept any expensive ingots
     this.getOrCreateBuilder(ItemTags.BEACON_PAYMENT_ITEMS)
-        .addTags(TinkerMaterials.cobalt.getIngotTag(), TinkerMaterials.queensSlime.getIngotTag(),
+        .addTags(TinkerMaterials.cobalt.getIngotTag(), TinkerMaterials.ardite.getIngotTag(),
+                 TinkerMaterials.alumite.getIngotTag(), TinkerMaterials.queensSlime.getIngotTag(),
                  TinkerMaterials.manyullyn.getIngotTag(), TinkerMaterials.hepatizon.getIngotTag());
   }
 
@@ -158,6 +161,8 @@ public class ItemTagProvider extends ItemTagsProvider {
 
     this.copy(Tags.Blocks.ORES, Tags.Items.ORES);
     this.copy(TinkerTags.Blocks.ORES_COBALT, TinkerTags.Items.ORES_COBALT);
+    this.copy(TinkerTags.Blocks.ORES_ARDITE, TinkerTags.Items.ORES_ARDITE);
+    this.copy(TinkerTags.Blocks.ORES_ALUMITE, TinkerTags.Items.ORES_ALUMITE);
     this.copy(TinkerTags.Blocks.ORES_COPPER, TinkerTags.Items.ORES_COPPER);
 
     // wood

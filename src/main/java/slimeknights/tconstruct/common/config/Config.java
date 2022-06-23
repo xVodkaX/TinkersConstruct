@@ -45,7 +45,13 @@ public class Config {
     public final ConfigValue<Integer> foundryNuggetsPerOre;
 
     public final BooleanValue generateCobalt;
-    public final ConfigValue<Integer> veinCountCobalt;
+    public final ConfigValue<Integer> veinCountCobalt;    
+
+    public final BooleanValue generateArdite;
+    public final ConfigValue<Integer> veinCountArdite;    
+    
+    //public final BooleanValue generateAlumite;
+    //public final ConfigValue<Integer> veinCountAlumite;
 
     public final BooleanValue generateCopper;
     public final ConfigValue<Integer> veinCountCopper;
@@ -216,6 +222,17 @@ public class Config {
         .translation("tconstruct.configgui.veinCountCobalt")
         .worldRestart()
         .define("veinCountCobalt", 8);
+
+      this.generateArdite = builder
+        .comment("Generate Ardite")
+        .translation("tconstruct.configgui.generateArdite")
+        .worldRestart()
+        .define("generateArdite", true);
+      this.veinCountArdite = builder
+        .comment("Approx Ores per Chunk")
+        .translation("tconstruct.configgui.veinCountArdite")
+        .worldRestart()
+        .define("veinCountArdite", 8);
 
       builder.comment("Options related to slime islands").push("slime_islands");
       builder.comment("Options related to earth slime islands spawning in the oceans").push("earth");

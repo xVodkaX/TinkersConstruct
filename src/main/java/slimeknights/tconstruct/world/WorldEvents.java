@@ -68,6 +68,10 @@ public class WorldEvents {
         generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, TinkerWorld.COBALT_ORE_FEATURE_SMALL);
         generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, TinkerWorld.COBALT_ORE_FEATURE_LARGE);
       }
+      if (Config.COMMON.generateArdite.get()) {
+        generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, TinkerWorld.ARDITE_ORE_FEATURE_SMALL);
+        generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, TinkerWorld.ARDITE_ORE_FEATURE_LARGE);
+      }
     }
     else if (category != Category.THEEND) {
       // slime spawns anywhere, uses the grass and liquid

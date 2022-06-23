@@ -125,6 +125,8 @@ public class AdvancementsProvider extends GenericDataProvider {
       with.accept(MaterialIds.tinkersBronze);
       with.accept(MaterialIds.pigIron);
       with.accept(MaterialIds.cobalt);
+      with.accept(MaterialIds.ardite);
+      with.accept(MaterialIds.alumite);
       with.accept(MaterialIds.darkthread);
       // tier 4
       with.accept(MaterialIds.manyullyn);

@@ -50,6 +50,8 @@ public class MaterialTraitsDataProvider extends AbstractMaterialTraitDataProvide
     addDefaultTraits(MaterialIds.pigIron, TinkerModifiers.tasty.get());
     // tier 3 - nether
     addDefaultTraits(MaterialIds.cobalt, TinkerModifiers.lightweight.get());
+    addDefaultTraits(MaterialIds.ardite, TinkerModifiers.lightweight.get());
+    //addDefaultTraits(MaterialIds.alumite, TinkerModifiers.lightweight.get());
     // tier 3 - binding
     addDefaultTraits(MaterialIds.darkthread, TinkerModifiers.looting.get());
 

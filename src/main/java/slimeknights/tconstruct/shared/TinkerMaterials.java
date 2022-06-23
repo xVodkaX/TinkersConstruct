@@ -26,6 +26,8 @@ public final class TinkerMaterials extends TinkerModule {
   // ores
   public static final MetalItemObject copper = BLOCKS.registerMetal("copper", metalBuilder(MaterialColor.ADOBE), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
   public static final MetalItemObject cobalt = BLOCKS.registerMetal("cobalt", metalBuilder(MaterialColor.BLUE), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
+  public static final MetalItemObject ardite = BLOCKS.registerMetal("ardite", metalBuilder(MaterialColor.ORANGE), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
+  public static final MetalItemObject alumite = BLOCKS.registerMetal("alumite", metalBuilder(MaterialColor.PINK), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
   // tier 3
   public static final MetalItemObject slimesteel    = BLOCKS.registerMetal("slimesteel", () -> new SlimesteelBlock(metalBuilder(MaterialColor.WARPED_WART).notSolid()), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);
   public static final MetalItemObject tinkersBronze = BLOCKS.registerMetal("tinkers_bronze", "silicon_bronze", metalBuilder(MaterialColor.WOOD), GENERAL_TOOLTIP_BLOCK_ITEM, GENERAL_PROPS);

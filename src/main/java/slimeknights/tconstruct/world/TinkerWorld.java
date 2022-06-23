@@ -99,6 +99,7 @@ public final class TinkerWorld extends TinkerModule {
   /** Tab for anything generated in the world */
   @SuppressWarnings("WeakerAccess")
   public static final ItemGroup TAB_WORLD = new SupplierItemGroup(TConstruct.MOD_ID, "world", () -> new ItemStack(TinkerWorld.cobaltOre));
+  public static final ItemGroup TAB_WORLD = new SupplierItemGroup(TConstruct.MOD_ID, "world", () -> new ItemStack(TinkerWorld.arditeOre));
 	static final Logger log = Util.getLogger("tinker_world");
 
   public static final PlantType SLIME_PLANT_TYPE = PlantType.get("slime");
@@ -119,6 +120,7 @@ public final class TinkerWorld extends TinkerModule {
    */
   // ores
   public static final ItemObject<Block> cobaltOre = BLOCKS.register("cobalt_ore", () -> new Block(builder(Material.ROCK, MaterialColor.NETHERRACK, ToolType.PICKAXE, SoundType.NETHER_ORE).setRequiresTool().harvestLevel(HarvestLevels.IRON).hardnessAndResistance(10.0F)), DEFAULT_BLOCK_ITEM);
+  public static final ItemObject<Block> arditeOre = BLOCKS.register("ardite_ore", () -> new Block(builder(Material.ROCK, MaterialColor.NETHERRACK, ToolType.PICKAXE, SoundType.NETHER_ORE).setRequiresTool().harvestLevel(HarvestLevels.IRON).hardnessAndResistance(10.0F)), DEFAULT_BLOCK_ITEM);
   public static final ItemObject<Block> copperOre = BLOCKS.register("copper_ore", builder(Material.ROCK, ToolType.PICKAXE, SoundType.STONE).setRequiresTool().harvestLevel(HarvestLevels.STONE).hardnessAndResistance(3.0F, 3.0F), DEFAULT_BLOCK_ITEM);
 
   // slime
@@ -267,7 +269,9 @@ public final class TinkerWorld extends TinkerModule {
    */
   public static ConfiguredFeature<?, ?> COPPER_ORE_FEATURE;
   public static ConfiguredFeature<?, ?> COBALT_ORE_FEATURE_SMALL;
+  public static ConfiguredFeature<?, ?> ARDITE_ORE_FEATURE_SMALL;
   public static ConfiguredFeature<?, ?> COBALT_ORE_FEATURE_LARGE;
+  public static ConfiguredFeature<?, ?> ARDITE_ORE_FEATURE_LARGE;
 
   /*
    * Events
@@ -366,11 +370,19 @@ public final class TinkerWorld extends TinkerModule {
 																									 Feature.ORE.withConfiguration(new OreFeatureConfig(FillerBlockType.NETHERRACK, cobaltOre.get().getDefaultState(), 4))
                                                               .withPlacement(Features.Placements.NETHER_SPRING_ORE_PLACEMENT)
                                                               .square().count(Config.COMMON.veinCountCobalt.get() / 2));
+      ARDITE_ORE_FEATURE_SMALL = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, resource("ardite_ore_small"),
+                                                   Feature.ORE.withConfiguration(new OreFeatureConfig(FillerBlockType.NETHERRACK, arditeOre.get().getDefaultState(), 4))
+                                                              .withPlacement(Features.Placements.NETHER_SPRING_ORE_PLACEMENT)
+                                                              .square().count(Config.COMMON.veinCountArdite.get() / 2));
       // large veins, around y=16, up to 48
       COBALT_ORE_FEATURE_LARGE = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, resource("cobalt_ore_large"),
 																									 Feature.ORE.withConfiguration(new OreFeatureConfig(FillerBlockType.NETHERRACK, cobaltOre.get().getDefaultState(), 8))
                                                               .withPlacement(Placement.DEPTH_AVERAGE.configure(new DepthAverageConfig(32, 16)))
                                                               .square().count(Config.COMMON.veinCountCobalt.get() / 2));
+      ARDITE_ORE_FEATURE_LARGE = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, resource("cardite_ore_large"),
+                                                   Feature.ORE.withConfiguration(new OreFeatureConfig(FillerBlockType.NETHERRACK, arditeOre.get().getDefaultState(), 8))
+                                                              .withPlacement(Placement.DEPTH_AVERAGE.configure(new DepthAverageConfig(32, 16)))
+                                                              .square().count(Config.COMMON.veinCountArdite.get() / 2));
     });
   }
 

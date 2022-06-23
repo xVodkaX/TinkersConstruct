@@ -44,6 +44,8 @@ public class BlockTagProvider extends BlockTagsProvider {
     // ores
     addMetalTags(TinkerMaterials.copper, false);
     addMetalTags(TinkerMaterials.cobalt, true);
+    addMetalTags(TinkerMaterials.ardite, true);
+    addMetalTags(TinkerMaterials.alumite, true);
     // tier 3
     addMetalTags(TinkerMaterials.slimesteel, false);
     addMetalTags(TinkerMaterials.tinkersBronze, false);
@@ -126,9 +128,13 @@ public class BlockTagProvider extends BlockTagsProvider {
   private void addWorld() {
     // ores
     this.getOrCreateBuilder(TinkerTags.Blocks.ORES_COBALT).add(TinkerWorld.cobaltOre.get());
+    this.getOrCreateBuilder(TinkerTags.Blocks.ORES_ARDITE).add(TinkerWorld.arditeOre.get());
+    //this.getOrCreateBuilder(TinkerTags.Blocks.ORES_ALUMITE).add(TinkerWorld.alumiteOre.get());
     this.getOrCreateBuilder(TinkerTags.Blocks.ORES_COPPER).add(TinkerWorld.copperOre.get());
     this.getOrCreateBuilder(Tags.Blocks.ORES)
         .addTag(TinkerTags.Blocks.ORES_COBALT)
+        .addTag(TinkerTags.Blocks.ORES_ARDITE)
+        //.addTag(TinkerTags.Blocks.ORES_ALUMITE)
         .addTag(TinkerTags.Blocks.ORES_COPPER);
 
     // allow the enderman to hold more blocks

@@ -141,6 +141,14 @@ public class MaterialStatsDataProvider extends AbstractMaterialStatsDataProvider
                      new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
                      HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                      ExtraMaterialStats.DEFAULT);
+    addMaterialStats(MaterialIds.ardite,
+                     new HeadMaterialStats(600, 7.5f, DIAMOND, 2.25f),
+                     HandleMaterialStats.DEFAULT.withDurability(1f).withMiningSpeed(0.8f).withAttackSpeed(1.2f),
+                     ExtraMaterialStats.DEFAULT);
+    addMaterialStats(MaterialIds.alumite,
+                     new HeadMaterialStats(1000, 8f, DIAMOND, 3.5f),
+                     HandleMaterialStats.DEFAULT.withDurability(1.2f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                     ExtraMaterialStats.DEFAULT);
     addMaterialStats(MaterialIds.darkthread, ExtraMaterialStats.DEFAULT);
 
     // tier 3 (mod integration)

@@ -79,6 +79,8 @@ public class BlockLootTableProvider extends BlockLootTables {
     // ores
     this.registerDropSelfLootTable(TinkerMaterials.copper.get());
     this.registerDropSelfLootTable(TinkerMaterials.cobalt.get());
+    this.registerDropSelfLootTable(TinkerMaterials.ardite.get());
+    this.registerDropSelfLootTable(TinkerMaterials.alumite.get());
     // tier 3
     this.registerDropSelfLootTable(TinkerMaterials.slimesteel.get());
     this.registerDropSelfLootTable(TinkerMaterials.tinkersBronze.get());
@@ -134,6 +136,8 @@ public class BlockLootTableProvider extends BlockLootTables {
 
   private void addWorld() {
     this.registerDropSelfLootTable(TinkerWorld.cobaltOre.get());
+    this.registerDropSelfLootTable(TinkerWorld.arditeOre.get());
+    //this.registerDropSelfLootTable(TinkerWorld.alumiteOre.get());
     this.registerDropSelfLootTable(TinkerWorld.copperOre.get());
     TinkerWorld.heads.forEach(this::registerDropSelfLootTable);
 

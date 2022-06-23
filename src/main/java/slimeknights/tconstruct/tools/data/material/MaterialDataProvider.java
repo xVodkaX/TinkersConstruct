@@ -52,6 +52,7 @@ public class MaterialDataProvider extends AbstractMaterialDataProvider {
     addMaterial(MaterialIds.pigIron,       3, ORDER_SPECIAL, false, 0xF0A8A4);
     // tier 3 (nether)
     addMaterial(MaterialIds.cobalt, 3, ORDER_NETHER, false, 0x2376dd);
+    addMaterial(MaterialIds.ardite, 3, ORDER_NETHER, false, 0xD06F23);
     // tier 3 - binding
     addMaterial(MaterialIds.darkthread, 3, ORDER_BINDING, false, 0x3B2754);
 

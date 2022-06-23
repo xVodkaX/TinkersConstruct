@@ -19,6 +19,8 @@ public enum Byproduct implements IByproduct {
   GOLD      (true, TinkerFluids.moltenGold),
   SMALL_GOLD("gold", true, TinkerFluids.moltenGold, FluidValues.NUGGET),
   COBALT    (true, TinkerFluids.moltenCobalt),
+  ARDITE    (true, TinkerFluids.moltenArdite),
+  ALUMITE    (true, TinkerFluids.moltenAlumite),
   // compat
   TIN     (false, TinkerFluids.moltenTin),
   SILVER  (false, TinkerFluids.moltenSilver),

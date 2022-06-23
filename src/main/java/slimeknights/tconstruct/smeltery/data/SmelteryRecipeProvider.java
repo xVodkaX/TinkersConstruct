@@ -299,7 +299,7 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
     // peripherals
     ShapedRecipeBuilder.shapedRecipe(TinkerSmeltery.searedDrain)
                        .key('#', TinkerSmeltery.searedBrick)
-                       .key('C', TinkerMaterials.copper.getIngotTag())
+                       .key('C', TinkerMaterials.ardite.getIngotTag())
                        .patternLine("# #")
                        .patternLine("C C")
                        .patternLine("# #")
@@ -307,7 +307,7 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
                        .build(consumer, modResource(folder + "drain"));
     ShapedRecipeBuilder.shapedRecipe(TinkerSmeltery.searedChute)
                        .key('#', TinkerSmeltery.searedBrick)
-                       .key('C', TinkerMaterials.copper.getIngotTag())
+                       .key('C', TinkerMaterials.ardite.getIngotTag())
                        .patternLine("#C#")
                        .patternLine("   ")
                        .patternLine("#C#")
@@ -879,6 +879,8 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
     // ores
     this.metalTagCasting(consumer, TinkerFluids.moltenCopper, "copper", metalFolder, true);
     this.metalTagCasting(consumer, TinkerFluids.moltenCobalt, "cobalt", metalFolder, true);
+    this.metalTagCasting(consumer, TinkerFluids.moltenArdite, "ardite", metalFolder, true);
+    this.metalTagCasting(consumer, TinkerFluids.moltenAlumite, "alumite", metalFolder, true);
     // tier 3 alloys
     this.metalTagCasting(consumer, TinkerFluids.moltenTinkersBronze, "silicon_bronze", metalFolder, true);
     this.metalTagCasting(consumer, TinkerFluids.moltenRoseGold, "rose_gold", metalFolder, true);
@@ -1049,6 +1051,8 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
     metalMelting(consumer, TinkerFluids.moltenGold.get(), "gold", true, metalFolder, false, Byproduct.COPPER);
     metalMelting(consumer, TinkerFluids.moltenCopper.get(), "copper", true, metalFolder, false, Byproduct.SMALL_GOLD);
     metalMelting(consumer, TinkerFluids.moltenCobalt.get(), "cobalt", true, metalFolder, false, Byproduct.IRON);
+    metalMelting(consumer, TinkerFluids.moltenArdite.get(), "ardite", true, metalFolder, false, Byproduct.GOLD);
+    metalMelting(consumer, TinkerFluids.moltenAlumite.get(), "alumite", true, metalFolder, false, Byproduct.IRON);
 
     MeltingRecipeBuilder.melting(Ingredient.fromTag(Tags.Items.ORES_NETHERITE_SCRAP), TinkerFluids.moltenDebris.get(), FluidValues.INGOT, 2.0f)
                         .setOre()
@@ -1411,6 +1415,9 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
     MeltingRecipeBuilder.melting(Ingredient.fromItems(TinkerModifiers.cobaltReinforcement), TinkerFluids.moltenCobalt.get(), FluidValues.NUGGET * 3)
                         .addByproduct(new FluidStack(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_PANE))
                         .build(consumer, modResource(metalFolder + "cobalt/reinforcement"));
+    MeltingRecipeBuilder.melting(Ingredient.fromItems(TinkerModifiers.arditeReinforcement), TinkerFluids.moltenArdite.get(), FluidValues.NUGGET * 3)
+                        .addByproduct(new FluidStack(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_PANE))
+                        .build(consumer, modResource(metalFolder + "ardite/reinforcement"));
 
     // slime
     TinkerGadgets.slimeSling.forEach((type, sling) -> {
@@ -1490,9 +1497,18 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
                       .addInput(TinkerFluids.magma.getForgeTag(), FluidValues.SLIMEBALL)
                       .build(consumer, prefix(TinkerFluids.moltenQueensSlime, folder));
 
+    // alumite: 1 cobalt + 1 ardite + 1 obsidian + 1 iron = 2
+    AlloyRecipeBuilder.alloy(TinkerFluids.moltenAlumite.get(), FluidValues.INGOT * 2)
+                      .addInput(TinkerFluids.moltenCobalt.getForgeTag(), FluidValues.INGOT)
+                      .addInput(TinkerFluids.moltenArdite.getLocalTag(), FluidValues.INGOT)
+                      .addInput(TinkerFluids.moltenIron.getLocalTag(), FluidValues.INGOT)
+                      .addInput(TinkerFluids.moltenObsidian.getLocalTag(), FluidValues.INGOT)
+                      .build(consumer, prefix(TinkerFluids.moltenAlumite, folder));
+
     // manyullyn: 3 cobalt + 1 debris = 3
     AlloyRecipeBuilder.alloy(TinkerFluids.moltenManyullyn.get(), FluidValues.INGOT * 4)
-                      .addInput(TinkerFluids.moltenCobalt.getForgeTag(), FluidValues.INGOT * 3)
+                      .addInput(TinkerFluids.moltenCobalt.getForgeTag(), FluidValues.INGOT * 2)
+                      .addInput(TinkerFluids.moltenArdite.getLocalTag(), FluidValues.INGOT * 2)
                       .addInput(TinkerFluids.moltenDebris.getLocalTag(), FluidValues.INGOT)
                       .build(consumer, prefix(TinkerFluids.moltenManyullyn, folder));
 
@@ -1500,6 +1516,7 @@ public class SmelteryRecipeProvider extends BaseRecipeProvider implements ISmelt
     AlloyRecipeBuilder.alloy(TinkerFluids.moltenHepatizon.get(), FluidValues.INGOT * 2)
                       .addInput(TinkerFluids.moltenCopper.getForgeTag(), FluidValues.INGOT * 2)
                       .addInput(TinkerFluids.moltenCobalt.getForgeTag(), FluidValues.INGOT)
+                      .addInput(TinkerFluids.moltenArdite.getForgeTag(), FluidValues.INGOT)
                       .addInput(TinkerFluids.moltenQuartz.getLocalTag(), FluidValues.GEM * 4)
                       .build(consumer, prefix(TinkerFluids.moltenHepatizon, folder));
 
